@@ -11,13 +11,20 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	if (handle_edge_cases(format) == -1)
+	{
 		return (-1);
+	}
 va_start(args, format);
 for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] != '%')
 {
 _putchar(format[i]);
+count++;
+}
+else if (format[i] == '%')
+{
+_putchar('%');
 count++;
 }
 else if (format[i + 1] == 'c')
@@ -37,12 +44,6 @@ while (*s != '\0')
 	count++;
 }
 count += 6;
-i++;
-}
-else if (format[i + 1] == '%')
-{
-_putchar('%');
-count += 2;
 i++;
 }
 }

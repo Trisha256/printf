@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * handle_edge_cases - .....
