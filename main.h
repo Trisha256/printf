@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 
-unsigned int i;
+int i;
 char c, *s;
 va_list args;
 
