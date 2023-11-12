@@ -6,6 +6,11 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+
+unsigned int i;
+char c, *s;
+va_list args;
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 #endif
