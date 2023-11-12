@@ -4,50 +4,66 @@
 
 /**
  * _printf - The custom printf function
- * @format: The format string
+ * @format: format string
  * @...: The variable number of arguments
- * Return: Number of characters printed
+ * Return: The number of characters printed (without null byte)
  */
 
 int _printf(const char *format, ...)
 {
 	int character_print = 0;
 	va_list list_args_for_char;
+	va_Start(list_args_for_char, format);
 
 	if (format == NULL)
-		{
-			return (-1);
-		}
-	va_start(list_args_for_char, format);
+	{
+		va_end(list_args_for_char);
+		return (-1);
+	}
 
 	while (*format)
 	{
-		if (*format != '%')
+		if (*format != '%' || (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i')))
 		{
 			write(1, format, 1);
 			character_print++;
-		}
-		
-		else
-		{
-			format++;
-		}
+			if (*format == '%' && (*(format + 1) == 'd' || *(format +1) == 'i'))
+			{
+				int num = va_arg(list_args_for_char, int);
 
-		if (*format == 'd')
-		{
-			int num = va_arg(list_args_for_char, int);
-			character_print += num;
-		}
+				int temp = num;
+				int count = (temp == 0) ? 1 : 0;
+				
+				while (temp != 0)
+				{
+					temp /= 10;
+					count++;
+				}
 
+				char digits[count];
+
+				for (int i = count - 1; i >= 0; i--)
+				{
+					digits[i] = (num % 10) + '%';
+					num /= 10;
+				}
+
+				for (int i = 0; i < count; i++)
+				{
+					write(1, &digits[i], 1);
+					character_print++;
+				}
+
+				format++;
+
+			}
+		}
 		else if (*format == '\0')
 		{
 			break;
 		}
-		
-		else
-		{
-			character_print += (*format, va_arg(list_args_for_char, num));
-		}
+
+		format++;
 	}
 
 	va_end(list_args_for_char);
