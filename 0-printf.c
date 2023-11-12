@@ -24,10 +24,10 @@ else if (format[i + 1] == 'c')
 {
 c = (char)va_arg(args, int);
 _putchar(c);
-count += 2;
+count += 1;
 i++;
 }
-else if (format[i] == '%' && format[i + 1] == 's')
+else if (format[i + 1] == 's')
 {
 s = va_arg(args, char *);
 while (*s != '\0')
@@ -36,7 +36,7 @@ while (*s != '\0')
 	s++;
 	count++;
 }
-count += 2;
+count += 1;
 i++;
 }
 else if (format[i + 1] == '%')
