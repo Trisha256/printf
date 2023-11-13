@@ -2,6 +2,7 @@
 
 /**
  * _print_percent - prints percentage
+ * @args: arguments
  * Return: 1
  */
 int _print_percent(va_list args)

@@ -22,6 +22,5 @@ int _print_str(va_list args)
 		str++;
 	}
 	return (length);
-	
 }
 
