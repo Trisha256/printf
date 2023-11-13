@@ -31,13 +31,26 @@ sgtruct fmt
 	int (*fn)(va_list, char[], int, int, int, int);
 };
 
-
+#include <stdarg.h>
+#include <limits.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <string.h>
 
 int i;
-char c, *s;
+char *s, c;
 va_list args;
+
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+int _printf_char(va_list argt);
+int _printf_str(va_list argt);
+int _strlen(char *str);
+int _strlenc(const char *str);
+int _print_percent(void);
+
+
 
 #endif
