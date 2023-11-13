@@ -1,32 +1,35 @@
 #include "main.h"
 /**
- * print_binary - function that convert to binary
- * @val: the argument
- * Return: integer
- */
+* print_binary - function that convert to binary
+* @val: the argument
+* Return: integer
+*/
 
 int print_binary(va_list val)
 {
-	int count = 0;
+int flag = 0;
+int cont = 0;
+int i, b;
+unsigned int num = va_arg(val, unsigned int);
 
-	unsigned int num = va_arg(val, unsigned int);
+for (i = 31; i >= 0; i--)
+{
+if ((num >> i) & 1)
+flag = 1;
 
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-	for (i = 31; i >= 0; i--)
-	{
-		unsigned int mask = 1 << i;
-		int bit = (num & mask) ? 1 : 0;
+if (flag)
+{
+b = (num >> i) & 1;
+_putchar(b + '0');
+cont++;
+}
+}
 
-		if (bit || count > 0)
-		{
-			_putchar(bit + '0');
-			count++;
-		}
-	}
+if (cont == 0)
+{
+cont++;
+_putchar('0');
+}
 
-	return (count);
+return (cont);
 }
