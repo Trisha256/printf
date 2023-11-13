@@ -4,50 +4,46 @@
 * @format: format specifier
 * Return: int
 */
-int handle_edge_cases(const char *format);
-
 int _printf(const char *format, ...)
 {
-	int count = 0;
+convert p[] = {
+{"%s", _print_str},
+{"%c", _print_char},
+{"%%", _print_percent},
+{"%i", _print_int},
+{"%d", _print_dec}
+};
 
-	if (handle_edge_cases(format) == -1)
-	{
-		return (-1);
-	}
+va_list args;
+int k = 0;
+int l;
+int count = 0;
+
 va_start(args, format);
-for (i = 0; format && format[i] != '\0'; i++)
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+return (-1);
+
+while (format[k] != '\0')
 {
-if (format[i] != '%')
+l = sizeof(p) / sizeof(p[0]) - 1;
+while (l >= 0)
 {
-_putchar(format[i]);
+if (p[l].format[0] == format[k] && p[l].format[1] == format[k + 1])
+{
+count += p[l].function(args);
+k = k + 2;
+goto Here;
+}
+--l;
+}
+_putchar(format[k]);
 count++;
+k++;
+Here:
+continue;
 }
-else if (format[i + 1] == 'c')
-{
-c = (char)va_arg(args, int);
-_putchar(c);
-count += 2;
-i++;
-}
-else if (format[i + 1] == 's')
-{
-s = va_arg(args, char *);
-while (*s != '\0')
-{
-	_putchar(*s);
-	s++;
-	count++;
-}
-count += 6;
-i++;
-}
-else if (format[i + 1] == '%')
-{
-	_putchar('%');
-	count += 2;
-	i++;
-}
-}
+
 va_end(args);
 return (count);
 }
+

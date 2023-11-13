@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * _printf_str - prints string
- * @argt: arguments
+ * _print_str - prints string
+ * @args: arguments
  * Return: 1
  */
 
-int _printf_str(va_list argt)
+int _print_str(va_list args)
 {
 	int p;
 	int slength;
 	char *str;
 
-	str = va_arg(argt, char *);
+	str = va_arg(args, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
