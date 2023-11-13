@@ -1,8 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
 
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
@@ -19,17 +16,6 @@
 #define S_LONG 2
 #define S_SHORT 1
 
-/**
- * struct fmt - Struct op by Peter and Patricia
- * @fmt: The format.
- * @fn: The function that is associated
- */
-
-sgtruct fmt
-{
-	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int);
-};
 
 #include <stdarg.h>
 #include <limits.h>
@@ -42,7 +28,7 @@ sgtruct fmt
 
 /**
  * struct format - converter for printf
- * @ph: type char pointer of the specifier
+ * @format: type char pointer of the specifier
  * @function: function for the conversion specifier
  *
  */

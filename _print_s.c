@@ -8,25 +8,20 @@
 
 int _print_str(va_list args)
 {
-	int p;
-	int slength;
-	char *str;
+	const char *str = va_arg(args, const char *);
+	int length;
 
-	str = va_arg(args, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
-		slength = _strlen(str);
-		for (p = 0; p < slength; p++)
-			_putchar(str[p]);
-		return (slength);
 	}
-	else
+	while (*str != '\0')
 	{
-		slength = _strlen(str);
-		for (p = 0; p < slength; p++)
-			_putchar(str[p]);
-		return (slength);
+		_putchar(*str);
+		length++;
+		str++;
 	}
+	return (length);
+	
 }
 
