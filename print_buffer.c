@@ -27,16 +27,3 @@ int print_buffer(char *buf, unsigned int nbuf)
 
 	return 0;
 }
-/**
-* main - Entry point
-* Return: Always p (Success)
-*/
-int main()
-{
-	char message[] = "This is a test message.";
-	print_buffer(message, strlen(message));
-
-	print_buffer("", 0);
-
-	return 0;
-}
