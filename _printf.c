@@ -12,7 +12,12 @@ convert p[] = {
 {"%%", _print_percent},
 {"%i", _print_int},
 {"%d", _print_dec},
+<<<<<<< HEAD
+{"%b", print_binary},
+{"%s", print_buffer}
+=======
 {"%b", print_binary}
+>>>>>>> 1386945763ccc000807c5e180c85ef484d20a0bb
 };
 
 va_list args;
