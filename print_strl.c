@@ -8,7 +8,7 @@
 
 int _strlen(char *str)
 {
-	int length;
+	int length = 0;
 
 	while (str[length] != '\0')
 	{
@@ -25,7 +25,7 @@ int _strlen(char *str)
 
 int _strlenc(const char *str)
 {
-	int length;
+	int length = 0;
 
 	while (str[length] != '\0')
 	{
