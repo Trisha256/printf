@@ -36,7 +36,7 @@
 
 typedef struct {
 	const char *format;
-	int (*function)();
+	int (*function)(va_list);
 } convert;
 
 int _printf(const char *format, ...);
