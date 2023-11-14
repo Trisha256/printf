@@ -45,10 +45,16 @@ int _print_char(va_list args);
 int _print_str(va_list args);
 int _strlen(char *str);
 int _strlenc(const char *str);
-int _print_37(va_list args);
+int _print_percent(va_list args);
 int _print_int(va_list args);
 int _print_dec(va_list args);
+<<<<<<< HEAD
 int _print_binary(va_list val)
 int print_buffer(char *buf, unsigned int nbuf);
+=======
+int print_binary(va_list val);
+int print_hex_int(va_list val);
+
+>>>>>>> 1386945763ccc000807c5e180c85ef484d20a0bb
 
 #endif
