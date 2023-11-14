@@ -48,8 +48,8 @@ int _strlenc(const char *str);
 int _print_percent(va_list args);
 int _print_int(va_list args);
 int _print_dec(va_list args);
-int print_binary(va_list val);
-
+int _print_binary(va_list val);
+int print_hex_int(va_list val);
 
 
 #endif

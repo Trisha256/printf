@@ -16,15 +16,20 @@ int print_binary(va_list val)
 		_putchar('0');
 		return (1);
 	}
-	for (i = 31; i >= 0; i--)
-	{
-		unsigned int mask = 1 << i;
-		int bit = (num & mask) ? 1 : 0;
 
-		if (bit || count > 0)
+	{
+		int i = 31;
+
+		for (i = 31; i >= 0; i--)
 		{
-			_putchar(bit + '0');
-			count++;
+			unsigned int mask = 1 << i;
+			int bit = (num & mask) ? 1 : 0;
+
+			if (bit || count > 0)
+			{
+				_putchar(bit + '0');
+				count++;
+			}
 		}
 	}
 
