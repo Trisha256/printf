@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 convert p[] = {
 {"%s", _print_str},
 {"%c", _print_char},
-{"%%", _print_percent},
+{"%%", _print_37},
 {"%i", _print_int},
 {"%d", _print_dec},
 {"%b", print_binary},
