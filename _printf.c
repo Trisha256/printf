@@ -9,10 +9,10 @@ int _printf(const char *format, ...)
 convert p[] = {
 {"%s", _print_str},
 {"%c", _print_char},
-{"%%", _print_37},
+{"%%", _print_percent},
 {"%i", _print_int},
 {"%d", _print_dec},
-{"%b", print_binary},
+{"%b", print_binary}
 };
 
 va_list args;

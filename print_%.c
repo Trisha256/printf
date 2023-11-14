@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _print_37 - prints percentage
+ * _print_percent - prints percentage
  * @args: arguments
  * Return: 1
  */
-int _print_37(va_list args)
+int _print_percent(va_list args)
 {
 	(void)args;
-	_putchar(37);
+	_putchar('%');
 	return (1);
 }
