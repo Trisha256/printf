@@ -3,29 +3,33 @@
 /**
  * _strlen - length of the string
  * @str: string to be printed
- * Return: 1
+ * Return: length
  */
 
 int _strlen(char *str)
 {
-	int p;
+	int length;
 
-	for (p = 0; str[p] != 0; p++)
-		;
-		return (1);
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	return (length);
 }
 
 /**
  * _strlenc - length of the string
  * @str: string to be printed
- * Return: 1
+ * Return: length
  */
 
 int _strlenc(const char *str)
 {
-	int p;
+	int length;
 
-	for (p = 0; str[p] != 0; p++)
-		;
-		return (1);
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	return (length);
 }
