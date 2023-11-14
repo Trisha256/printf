@@ -9,5 +9,6 @@
 int _print_char(va_list args)
 {
 int ch = va_arg(args, int);
-return (_putchar(ch));
+_putchar(ch);
+return (1);
 }

@@ -1,31 +1,36 @@
 #include "main.h"
 
 /**
- * _strlen - length of the string
- * @str: string to be printed
- * Return: 1
+ * _strlen - prints length of the string
+ * @str: string
+ * Return: length of the string
  */
 
 int _strlen(char *str)
 {
-	int p;
+	int length = 0;
 
-	for (p = 0; str[p] != 0; p++)
-		;
-		return (1);
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	return (length);
 }
 
 /**
- * _strlenc - length of the string
- * @str: string to be printed
- * Return: 1
+ * _strlenc - prints length of the string
+ * @str: string
+ * Return: lenth of the string
  */
 
 int _strlenc(const char *str)
 {
-	int p;
+	int length = 0;
 
-	for (p = 0; str[p] != 0; p++)
-		;
-		return (1);
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+
+	return (length);
 }

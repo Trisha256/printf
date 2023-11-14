@@ -3,7 +3,7 @@
 /**
  * _print_str - prints string
  * @args: arguments
- * Return: 1
+ * Return: length
  */
 
 int _print_str(va_list args)
