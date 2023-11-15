@@ -17,7 +17,7 @@ convert p[] = {
 
 va_list args;
 int k = 0;
-int l;
+int l = 5;
 int count = 0;
 
 va_start(args, format);
