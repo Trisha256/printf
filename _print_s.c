@@ -3,13 +3,13 @@
 /**
  * _print_str - prints string
  * @args: arguments
- * Return: length
+ * Return: count
  */
 
 int _print_str(va_list args)
 {
-	const char *str = va_arg(args, const char *);
-	int length;
+	char *str = va_arg(args, char *);
+	int count = 0;
 
 	if (str == NULL)
 	{
@@ -18,9 +18,9 @@ int _print_str(va_list args)
 	while (*str != '\0')
 	{
 		_putchar(*str);
-		length++;
+		count++;
 		str++;
 	}
-	return (length);
+	return (count);
 }
 

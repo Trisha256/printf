@@ -30,12 +30,13 @@
  * struct format - converter for printf
  * @format: type char pointer of the specifier
  * @function: function for the conversion specifier
- *
+ * Description: ....
  */
 
 
-typedef struct {
-	const char *format;
+typedef struct format
+{
+	char *format;
 	int (*function)(va_list);
 } convert;
 

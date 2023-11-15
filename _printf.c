@@ -17,16 +17,15 @@ convert p[] = {
 
 va_list args;
 int k = 0;
-int l;
+int l = 5;
 int count = 0;
 
 va_start(args, format);
-if (format == NULL || (format[0] == '%' && !format[1]))
-return (-1);
-
+if (!format || (format[0] == '%' && !format[1]))
+	return (-1);
 while (format[k] != '\0')
 {
-l = sizeof(p) / sizeof(p[0]) - 1;
+l = (sizeof(p) / sizeof(p[0])) - 1;
 while (l >= 0)
 {
 if (p[l].format[0] == format[k] && p[l].format[1] == format[k + 1])
