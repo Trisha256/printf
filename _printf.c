@@ -12,7 +12,8 @@ convert p[] = {
 {"%%", _print_percent},
 {"%i", _print_int},
 {"%d", _print_dec},
-{"%b", print_binary}
+{"%b", print_binary},
+{"%o", _print_oct}
 };
 
 va_list args;

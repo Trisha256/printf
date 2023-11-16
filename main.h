@@ -51,5 +51,5 @@ int _print_int(va_list args);
 int _print_dec(va_list args);
 int print_binary(va_list val);
 int print_hex_int(va_list val);
-
+int _print_oct(va_list args);
 #endif
