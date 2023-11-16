@@ -13,7 +13,9 @@ convert p[] = {
 {"%i", _print_int},
 {"%d", _print_dec},
 {"%b", print_binary},
-{"%o", _print_oct}
+{"%o", _print_oct},
+{"%S", print_exc_string},
+{"%p", print_pointer}
 };
 
 va_list args;
